@@ -1,0 +1,150 @@
+nav {
+    background-color: #FFFFFF;
+    border: 2px solid #EBE8D9;
+    padding-block: 50px 10px;
+}
+
+.nav-desc1 {
+    margin-bottom: 30px;
+}
+
+.nav-logo-text {
+    gap: 10px;
+}
+
+.nav-text h1 {
+    font-size: 1.2rem;
+}
+
+.nav-text p {
+    font-size: 0.8rem;
+    color: #6A7282;
+}
+
+.plate {
+    color: #fff;
+    background-color: var(--orange);
+    font-size: 30px;
+    padding: 5px;
+}
+
+
+.bars {
+    border-color: transparent;
+    background-color: transparent;
+    color: #595C5F;
+    font-size: 30px;
+}
+
+.bars:hover {
+    color: var(--orange);
+}
+
+.bars-phone {
+    color: #595C5F;
+    display: none;
+}
+
+.bars-phone.active {
+    display: block;
+}
+
+.bars-phone::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #FFF6EA;
+    margin: auto;
+}
+
+.li-1::before,
+.li-2::before,
+.li-3::before {
+    font-family: "Font Awesome 7 Free";
+    font-weight: 900;
+}
+
+.li-1::before {
+    content: "\f02e";
+}
+
+.li-2::before {
+    content: "\f1da";
+}
+
+.li-3::before {
+    content: "\f013";
+}
+
+.li-4::before {
+    content: '';
+    display: inline-block;
+    background-image: url("/Assets/Avatars/profile-picture.jpg");
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 3px solid #FFB86A;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+}
+
+.bars-phone li {
+    margin-block: 10px;
+}
+
+.bars-phone li::before {
+    padding-right: 10px;
+}
+
+.bars-phone li:hover,
+.link-icons span i:hover {
+    color: var(--orange);
+}
+
+.link-icons {
+    display: none;
+    gap: 20px;
+    font-size: 30px;
+    color: #595C5F;
+}
+
+.link-icons img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid #FFB86A;
+}
+
+
+/* Media Queries if needed */
+@media (min-width: 576px) {
+    .nav-text h1 {
+        font-size: 1.5rem;
+    }
+
+    .nav-text p {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .nav-text h1 {
+        font-size: 2rem;
+    }
+
+    .bars {
+        display: none;
+    }
+
+    .link-icons {
+        display: inline-flex;
+    }
+}
+
+@media (min-width: 992px) {}
+
+@media (min-width: 1200px) {}
+
+@media (min-width: 1400px) {}

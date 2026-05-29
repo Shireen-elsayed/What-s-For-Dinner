@@ -48,4 +48,12 @@
   --border: #e8e8e8;
   --bg: #ffffff;
   --card-bg: #1e2230;
+  --orange:#FF6900;
+  --orange-light:#FFD7A8;
+  --bgc:#FFFBEB;
+
+  /*______ICONS-->UniCode_____*/
+  --fa-plate:"\f2e7";
+  --fa-bars:"\f0c9";
+  --fa-rocket: "\f135";
 }
