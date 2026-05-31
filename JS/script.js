@@ -21,7 +21,7 @@ const meals = [
   {
     title: "Classic Beef Burger",
     description: "Juicy homemade burger with all the fixings",
-    image: "/Assets/Photos/photo-11.avif",
+    image: "./Assets/Photos/photo-11.avif",
     ingredients: [
       "500g ground beef (80/20)",
       "24 burger buns",
