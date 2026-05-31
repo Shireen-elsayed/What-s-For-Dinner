@@ -21,7 +21,7 @@ const meals = [
   {
     title: "Classic Beef Burger",
     description: "Juicy homemade burger with all the fixings",
-    image: "../Assets/Photos/photo-11.avif",
+    image: "/Assets/Photos/photo-11.avif",
     ingredients: [
       "500g ground beef (80/20)",
       "24 burger buns",
@@ -50,7 +50,7 @@ const meals = [
   {
     title: "Margherita Pizza",
     description: "Classic Italian pizza with fresh mozzarella and basil",
-    image: "../Assets/Photos/photo-12.avif",
+    image: "./Assets/Photos/photo-12.avif",
     ingredients: [
       "300g pizza dough",
       "200g crushed tomatoes",
@@ -79,7 +79,7 @@ const meals = [
   {
     title: "Teriyaki Chicken Bowl",
     description: "Sweet and savory chicken over rice with vegetables",
-    image: "../Assets/Photos/photo-1.avif",
+    image: "./Assets/Photos/photo-1.avif",
     ingredients: [
       "400g chicken thighs, sliced",
       "1/2 cup teriyaki sauce",
