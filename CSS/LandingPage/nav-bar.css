@@ -65,6 +65,15 @@ nav {
     font-weight: 900;
 }
 
+.li-1::before,
+.li-2::before,
+.li-3::before,
+.li-4::before {
+    width: 25px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
 .li-1::before {
     content: "\f02e";
 }
@@ -78,24 +87,21 @@ nav {
 }
 
 .li-4::before {
-    content: '';
+    content: "";
     display: inline-block;
-    background-image: url("/Assets/Avatars/profile-picture.jpg");
-    width: 25px;
     height: 25px;
-    border-radius: 50%;
-    border: 3px solid #FFB86A;
+    background-image: url("/Assets/Avatars/profile-picture.jpg");
     background-size: cover;
-    background-repeat: no-repeat;
-    margin-right: 10px;
+    background-position: center;
+    border-radius: 50%;
+    border: 2px solid #FFB86A;
 }
 
 .bars-phone li {
     margin-block: 10px;
-}
-
-.bars-phone li::before {
-    padding-right: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px
 }
 
 .bars-phone li:hover,
@@ -120,20 +126,18 @@ nav {
 
 /* Media Queries if needed */
 @media (min-width: 576px) {
-    .nav-text h1 {
-        font-size: 1.5rem;
-    }
+    .nav-text {
+        h1 {
+            font-size: clamp(1.3rem, 3vw, 2.5rem);
+        }
 
-    .nav-text p {
-        font-size: 1rem;
+        p {
+            font-size: 1.3rem;
+        }
     }
 }
 
 @media (min-width: 768px) {
-    .nav-text h1 {
-        font-size: 2rem;
-    }
-
     .bars {
         display: none;
     }
