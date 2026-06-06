@@ -90,7 +90,7 @@ nav {
     content: "";
     display: inline-block;
     height: 25px;
-    background-image: url("profile-picture.jpg");
+    background-image: url("../../Assets/Avatars/profile-picture.jpg");
     background-size: cover;
     background-position: center;
     border-radius: 50%;
