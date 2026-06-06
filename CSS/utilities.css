@@ -7,18 +7,23 @@
 .d-block {
   display: block;
 }
+
 .d-inline {
   display: inline;
 }
+
 .d-inline-block {
   display: inline-block;
 }
+
 .d-flex {
   display: flex;
 }
+
 .d-grid {
   display: grid;
 }
+
 .d-none {
   display: none;
 }
@@ -30,6 +35,7 @@
 .flex-row {
   flex-direction: row;
 }
+
 .flex-column {
   flex-direction: column;
 }
@@ -37,15 +43,19 @@
 .justify-start {
   justify-content: flex-start;
 }
+
 .justify-center {
   justify-content: center;
 }
+
 .justify-end {
   justify-content: flex-end;
 }
+
 .justify-between {
   justify-content: space-between;
 }
+
 .justify-around {
   justify-content: space-around;
 }
@@ -53,9 +63,11 @@
 .align-start {
   align-items: flex-start;
 }
+
 .align-center {
   align-items: center;
 }
+
 .align-end {
   align-items: flex-end;
 }
@@ -63,6 +75,7 @@
 .flex-wrap {
   flex-wrap: wrap;
 }
+
 .flex-nowrap {
   flex-wrap: nowrap;
 }
@@ -74,15 +87,19 @@
 .text-left {
   text-align: left;
 }
+
 .text-center {
   text-align: center;
 }
+
 .text-right {
   text-align: right;
 }
+
 .text-end {
   text-align: end;
 }
+
 .text-start {
   text-align: start;
 }
@@ -90,9 +107,11 @@
 .text-uppercase {
   text-transform: uppercase;
 }
+
 .text-lowercase {
   text-transform: lowercase;
 }
+
 .text-capitalize {
   text-transform: capitalize;
 }
@@ -104,12 +123,15 @@
 .w-100 {
   width: 100%;
 }
+
 .w-75 {
   width: 75%;
 }
+
 .w-50 {
   width: 50%;
 }
+
 .w-25 {
   width: 25%;
 }
@@ -125,15 +147,19 @@
 .position-relative {
   position: relative;
 }
+
 .position-absolute {
   position: absolute;
 }
+
 .position-fixed {
   position: fixed;
 }
+
 .position-sticky {
   position: sticky;
 }
+
 .position-static {
   position: static;
 }
@@ -141,12 +167,15 @@
 .top-0 {
   top: 0;
 }
+
 .bottom-0 {
   bottom: 0;
 }
+
 .left-0 {
   left: 0;
 }
+
 .right-0 {
   right: 0;
 }
@@ -158,6 +187,7 @@
 .overflow-hidden {
   overflow: hidden;
 }
+
 .overflow-auto {
   overflow: auto;
 }
@@ -167,8 +197,9 @@
 =========================== */
 
 .rounded {
-  border-radius:15px;
+  border-radius: 15px;
 }
+
 .rounded-circle {
   border-radius: 50%;
 }
@@ -178,7 +209,7 @@
 =========================== */
 
 .cursor-pointer {
-   cursor: pointer; 
+  cursor: pointer;
 }
 
 /* ===========================
@@ -188,6 +219,7 @@
 .visible {
   visibility: visible;
 }
+
 .invisible {
   visibility: hidden;
 }
@@ -202,11 +234,30 @@
 }
 
 /* ===========================
-   Links
+   Lines
 =========================== */
 
-/* .link-st{
-  color:transparent;
+.gray-line {
+  display: inline-block;
+  background-color: #DEE2E6;
+  width: 100%;
+  height: 1px;
+  margin-block: 20px;
+}
+
+/* ===========================
+   Dynamic Counter for Lists
+=========================== */
+
+.dynamic-counter {
   list-style-type: none;
-  text-decoration: none;
-} */
+  counter-reset: i;
+}
+
+.dynamic-counter li {
+  counter-increment: i;
+}
+
+.dynamic-counter li::before {
+  content: counter(i);
+}

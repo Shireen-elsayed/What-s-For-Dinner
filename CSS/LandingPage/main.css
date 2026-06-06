@@ -1,7 +1,373 @@
-main{
+.meals {
     background-color: #FFF9EC;
+    padding: 30px 0 50px;
 }
 
-.meals{
+.meal {
     background-color: #fff;
+    margin: 0px 15px;
+    box-shadow: 0px 5px 3px rgba(0, 0, 0, 0.2);
 }
+
+#mealImg {
+    display: block;
+    border-radius: 15px 15px 0 0;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.rate {
+    background-color: #fff;
+    padding: 10px;
+    top: 30px;
+    left: 30px;
+    border-radius: 20px;
+}
+
+.rate span {
+    color: #6A7282;
+}
+
+.rate p::before {
+    content: "\f005";
+    color: #FDC700;
+    font-weight: 900;
+    font-family: "Font Awesome 7 Free";
+    margin-right: 10px;
+}
+
+.fast-details {
+    background-color: #fff;
+    bottom: 30px;
+    width: 80%;
+    padding: 20px 10px;
+    left: 10%;
+}
+
+#content {
+    height: 370px;
+    width: 100%;
+    overflow: auto;
+    line-height: 1.8rem;
+}
+
+/* width */
+#content::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track  remaining*/
+#content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Handle */
+#content::-webkit-scrollbar-thumb {
+    background: #FDD9D9;
+}
+
+/* Handle on hover */
+#content::-webkit-scrollbar-thumb:hover {
+    background: #BCA3A4;
+}
+
+
+
+.description {
+    padding-block: 30px;
+}
+
+.origin {
+    margin-block: 20px;
+    font-size: small;
+}
+
+
+.difficulty {
+    color: #00A63E;
+    background-color: #DBFCE7;
+    padding: 10px;
+    border-radius: 15PX;
+    margin-right: 20PX;
+}
+
+.country {
+    color: #155DFC;
+    background-color: #DBEAFE;
+    padding: 10px;
+    border-radius: 15PX;
+}
+
+.meal-desc {
+    color: #555F6E;
+    margin-top: 15px;
+}
+
+.meal-icon {
+    gap: 10px;
+}
+
+.save,
+.share {
+    display: flex;
+    color: var(--orange);
+    background-color: #FFEDD4;
+    border-radius: 5px;
+    padding: 10px 20px 10px 7px;
+}
+
+.details button {
+    margin-block: 20px;
+    color: #6A7282;
+    border-color: transparent;
+    background-color: transparent;
+    font-size: 17px;
+}
+
+.details button::before {
+    font-weight: 900;
+    font-family: "Font Awesome 7 Free";
+    margin-right: 10px;
+    color: #6A7282;
+}
+
+.details button:hover {
+    cursor: pointer;
+    color: #000;
+}
+
+#ingred-btn::before {
+    content: "\f0ae"
+}
+
+#instr-btn::before {
+    content: "\f518";
+}
+
+#nutr-btn::before {
+    content: "\f200";
+}
+
+#tips-btn::before {
+    content: "\f0eb";
+}
+
+.ingredients {
+    background-color: #FFF8EC;
+    padding-block: 20px 40px;
+    padding-left: 20px;
+}
+
+.ingredients li {
+    margin-block: 15px;
+}
+
+.ingredients li::before {
+    font-weight: bold;
+    font-size: 12px;
+    color: #fff;
+    background-color: var(--orange);
+    border-radius: 50%;
+    padding: 4px;
+    margin-right: 10px;
+}
+
+.instructions li {
+    margin-block: 40px;
+}
+
+.instructions li::before {
+    color: #fff;
+    background-color: var(--orange);
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 25%;
+    margin-right: 10px;
+}
+
+.nutrition {
+    gap: 20px;
+}
+
+.nutrition div {
+    background-color: #F9FAFB;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.val {
+    font-weight: bold;
+}
+
+.icon::before {
+    border-radius: 5px;
+    padding: 10px;
+    font-weight: 900;
+    font-family: "Font Awesome 7 Free";
+    margin-right: 10px;
+}
+
+.nutrition .calories::before {
+    content: "\f06d";
+    color: var(--orange);
+    background-color: #FFEDD4;
+}
+
+.protien::before {
+    content: "\f44b";
+    color: #155DFC;
+    background-color: #DBEAFE;
+}
+
+.carb::before {
+    content: "\e2cd";
+    color: #D08700;
+    background-color: #FEF9C2;
+}
+
+.fat::before {
+    content: "\f043";
+    color: #E7000B;
+    background-color: #FFE2E2;
+}
+
+.fiber::before {
+    content: "\f4d8";
+    color: #00A63E;
+    background-color: #DBFCE7;
+}
+
+.sodium::before {
+    content: "\f1b2";
+    color: #E60076;
+    background-color: #FCE7F3;
+}
+
+.chef-tips li {
+    margin-bottom: 20px;
+    background-color: #FFFBEB;
+    border-radius: 15px;
+    border-left: 5px solid #FFB900;
+    padding: 30px;
+}
+
+.chef-tips li::before {
+    content: "\f058";
+    color: #E17100;
+    font-weight: 900;
+    font-family: "Font Awesome 7 Free";
+    margin-right: 5px;
+}
+
+#try-another {
+    background: linear-gradient(to right, var(--orange), #E80309);
+    color: #fff;
+    border-color: transparent;
+    padding: 20px;
+}
+
+#try-another::before {
+    content: "\f021";
+    font-weight: 900;
+    font-family: "Font Awesome 7 Free";
+    margin-right: 7px;
+}
+
+#try-another:hover {
+    scale: 1.1;
+    background-color: #EE2604;
+    cursor: pointer;
+}
+
+
+/* just for test */
+
+.chef-tips,
+.ingredients,
+.nutrition {
+    display: none;
+}
+
+
+/* Media Queries if needed */
+@media (min-width: 576px) {
+    .details {
+        flex-direction: row;
+        font-size: 25px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    .nutrition {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    /* just for test */
+    .nutrition,
+    .chef-tips,
+    .ingredients {
+        display: none;
+    }
+
+    #try-another {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 768px) {}
+
+@media (min-width: 992px) {
+    .meal {
+        display: flex;
+        gap: 50px;
+        height: 600px;
+        overflow: auto;
+    }
+
+    /* width */
+    .meal::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    /* Track  remaining*/
+    .meal::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    /* Handle */
+    .meal::-webkit-scrollbar-thumb {
+        background: #FDD9D9;
+    }
+
+    /* Handle on hover */
+    .meal::-webkit-scrollbar-thumb:hover {
+        background: #BCA3A4;
+    }
+
+    #mealImg {
+        height: 800px;
+    }
+
+    .description {
+        margin-right: 50px;
+    }
+
+    #details {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .fast-details {
+        bottom: -150px;
+        left: 10%;
+    }
+}
+
+@media (min-width: 1200px) {}
+
+@media (min-width: 1400px) {}
