@@ -285,16 +285,6 @@
     cursor: pointer;
 }
 
-
-/* just for test */
-
-/* .chef-tips,
-.ingredients,
-.nutrition {
-    display: none;
-} */
-
-
 /* Media Queries if needed */
 @media (min-width: 576px) {
     .details {
@@ -311,13 +301,6 @@
         gap: 20px;
     }
 
-    /* just for test */
-    /* .nutrition,
-    .chef-tips,
-    .ingredients {
-        display: none;
-    } */
-
     #try-another {
         font-size: 18px;
     }
@@ -329,6 +312,7 @@
     .meal {
         display: grid;
         grid-template-columns: 43% 57%;
+        gap:30px;
         height: 800px;
         overflow: auto;
         width: 75%;
