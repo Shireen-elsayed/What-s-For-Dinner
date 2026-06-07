@@ -8,132 +8,321 @@ barsIcon.addEventListener("click", function () {
 
 //______Meals______
 
-// let ingred = document.getElementById("ingredList");
-// let btnTry = document.getElementById("tryAnother");
-// let btnIngred = document.getElementById("ingred-btn");
-// let btnInstr = document.getElementById("instr-btn");
-// let btnNutr = document.getElementById("nutr-btn");
-// let btnTips = document.getElementById("tips-btn");
-// let currMeal;
-// let content = document.getElementById("content");
+let btnTry = null;
+let btnIngred = null;
+let btnInstr = null;
+let btnNutr = null;
+let btnTips = null;
+let content = null;
+let currMeal;
 
-// const meals = [
-//   {
-//     title: "Classic Beef Burger",
-//     description: "Juicy homemade burger with all the fixings",
-//     image: "./Assets/Photos/photo-11.avif",
-//     ingredients: [
-//       "500g ground beef (80/20)",
-//       "24 burger buns",
-//       "4 slices cheddar cheese",
-//       "Lettuce leaves",
-//       "Tomato slices",
-//       "Red onion, sliced",
-//       "Pickles",
-//       "Burger sauce or condiments",
-//     ],
-//     instructions: [
-//       "Divide ground beef into 4 equal portions. Form into patties, making a small indent in the center.",
-//       "Season patties generously with salt and pepper on both sides.",
-//       "Heat a grill or skillet over high heat. Cook patties for 4-5 minutes per side for medium.",
-//       "Add cheese slices in the last minute of cooking and cover to melt.",
-//       "Toast burger buns lightly on the grill or in a pan.",
-//       "Assemble burgers with lettuce, tomato, onion, pickles, and your favorite sauce.",
-//     ],
-//     tips: [
-//       "Don't press down on burgers while cooking - keeps them juicy",
-//       "Make indent in center to prevent burger from puffing up",
-//       "Let patties rest for 2-3 minutes before serving",
-//       "Toast buns for better texture and flavor",
-//     ],
-//   },
-//   {
-//     title: "Margherita Pizza",
-//     description: "Classic Italian pizza with fresh mozzarella and basil",
-//     image: "./Assets/Photos/photo-12.avif",
-//     ingredients: [
-//       "300g pizza dough",
-//       "200g crushed tomatoes",
-//       "250g fresh mozzarella",
-//       "Fresh basil leaves",
-//       "2 tablespoons olive oil",
-//       "2 cloves garlic, minced",
-//       "Salt and pepper to taste",
-//       "Parmesan cheese for topping",
-//     ],
-//     instructions: [
-//       "Let pizza dough come to room temperature and rest for 1 hour.",
-//       "Preheat oven to maximum temperature (usually 250°C/480°F).",
-//       "Mix crushed tomatoes with olive oil, garlic, salt, and pepper for the sauce.",
-//       "Roll out dough on a floured surface to desired thickness.",
-//       "Spread tomato sauce, add torn mozzarella pieces, and drizzle with olive oil.",
-//       "Bake for 10-12 minutes until crust is golden. Top with fresh basil and parmesan.",
-//     ],
-//     tips: [
-//       "Use a pizza stone for crispier crust",
-//       "Don't overload with toppings - less is more",
-//       "Add basil after baking to keep it fresh",
-//       "Let dough rest properly for best texture",
-//     ],
-//   },
-//   {
-//     title: "Teriyaki Chicken Bowl",
-//     description: "Sweet and savory chicken over rice with vegetables",
-//     image: "./Assets/Photos/photo-1.avif",
-//     ingredients: [
-//       "400g chicken thighs, sliced",
-//       "1/2 cup teriyaki sauce",
-//       "1 broccoli head, florets",
-//       "1 carrot, julienned",
-//       "Sesame seeds",
-//       "Green onions, sliced",
-//       "1 tablespoon sesame oil",
-//     ],
-//     instructions: [
-//       "Heat sesame oil in a pan. Cook chicken until browned on all sides.",
-//       "Add teriyaki sauce to chicken, simmer for 5 minutes until sauce thickens.",
-//       "Meanwhile, steam broccoli and carrots until tender-crisp.",
-//       "Divide rice between bowls.",
-//       "Top with teriyaki chicken and steamed vegetables.",
-//     ],
-//     tips: [
-//       "Use chicken thighs for juicier meat",
-//       "Make homemade teriyaki sauce for better flavor control",
-//       "Add edamame for extra protein",
-//       "Meal prep by cooking rice and chicken ahead",
-//     ],
-//   },
-// ];
+const meals = [
+  {
+    rate: 4.5,
+    review: 189,
+    prepTime: "10 min",
+    cookTime: "5 min",
+    servings: "2 people",
+    difficulty: "Easy",
+    country: "American",
+    title: "Classic Beef Burger",
+    description: "Juicy homemade burger with all the fixings",
+    image: "./Assets/Photos/photo-11.avif",
+    ingredients: [
+      "500g ground beef (80/20)",
+      "24 burger buns",
+      "4 slices cheddar cheese",
+      "Lettuce leaves",
+      "Tomato slices",
+      "Red onion, sliced",
+      "Pickles",
+      "Burger sauce or condiments",
+    ],
+    instructions: [
+      "Divide ground beef into 4 equal portions. Form into patties, making a small indent in the center.",
+      "Season patties generously with salt and pepper on both sides.",
+      "Heat a grill or skillet over high heat. Cook patties for 4-5 minutes per side for medium.",
+      "Add cheese slices in the last minute of cooking and cover to melt.",
+      "Toast burger buns lightly on the grill or in a pan.",
+      "Assemble burgers with lettuce, tomato, onion, pickles, and your favorite sauce.",
+    ],
+    nutriton: {
+      cal: "650 kcal",
+      prot: "38g",
+      carb: "42g",
+      fat: "35g",
+      fiber: "2g",
+      sodium: "920mg",
+    },
+    tips: [
+      "Don't press down on burgers while cooking - keeps them juicy",
+      "Make indent in center to prevent burger from puffing up",
+      "Let patties rest for 2-3 minutes before serving",
+      "Toast buns for better texture and flavor",
+    ],
+  },
+  {
+    rate: 4.7,
+    review: 312,
+    prepTime: "15 min",
+    cookTime: "25 min",
+    servings: "4 people",
+    difficulty: "Intermediate",
+    country: "Asian",
+    title: "Thai Green Curry",
+    description: "Vibrant and aromatic curry with vegetables and coconut milk",
+    image: "./Assets/Photos/photo-5.avif",
+    ingredients: [
+      "2 tablespoons green curry paste",
+      "400ml coconut milk",
+      "300g chicken breast, sliced",
+      "1 red bell pepper, sliced",
+      "100g green beans",
+      "1 eggplant, cubed",
+      "2 tablespoons fish sauce",
+      "1 tablespoon palm sugar",
+      "Fresh Thai basil leaves",
+    ],
+    instructions: [
+      "Heat a large pot or wok over medium heat. Add curry paste and cook for 1 minute until fragrant.",
+      "Add half the coconut milk and stir to combine with the curry paste.",
+      "Add sliced chicken and cook until no longer pink, about 5 minutes.",
+      "Add cheese slices in the last minute of cooking and cover to melt.",
+      "Add remaining coconut milk, vegetables, fish sauce, and palm sugar.",
+      "Simmer for 15-20 minutes until vegetables are tender and sauce has thickened.",
+      "Stir in fresh Thai basil leaves. Serve hot with jasmine rice.",
+    ],
+    nutriton: {
+      cal: "420 kcal",
+      prot: "26g",
+      carb: "22g",
+      fat: "26g",
+      fiber: "5g",
+      sodium: "890mg",
+    },
+    tips: [
+      "Adjust spice level by using more or less curry paste",
+      "Add vegetables in stages based on cooking time needed",
+      "Fresh Thai basil is essential for authentic flavor",
+      "Use full-fat coconut milk for richest, creamiest sauce",
+    ],
+  },
+  {
+    rate: 4.7,
+    review: 412,
+    prepTime: "15 min",
+    cookTime: "20 min",
+    servings: "4 people",
+    difficulty: "Easy",
+    country: "American",
+    title: "Beef Tacos",
+    description: "Flavorful Mexican tacos with seasoned ground beef",
+    image: "./Assets/Photos/photo-9.avif",
+    ingredients: [
+      "500g ground beef",
+      "8 taco shells",
+      "1 onion, diced",
+      "2 tablespoons taco seasoning",
+      "Shredded lettuce",
+      "Diced tomatoes",
+      "Shredded cheddar cheese",
+      "Sour cream",
+      "Salsa",
+    ],
+    instructions: [
+      "Heat a large pot or wok over medium heat. Add curry paste and cook for 1 minute until fragrant.",
+      "Add half the coconut milk and stir to combine with the curry paste.",
+      "Add sliced chicken and cook until no longer pink, about 5 minutes.",
+      "Add cheese slices in the last minute of cooking and cover to melt.",
+      "Add remaining coconut milk, vegetables, fish sauce, and palm sugar.",
+      "Simmer for 15-20 minutes until vegetables are tender and sauce has thickened.",
+      "Stir in fresh Thai basil leaves. Serve hot with jasmine rice.",
+    ],
+    nutriton: {
+      cal: "420 kcal",
+      prot: "26g",
+      carb: "22g",
+      fat: "26g",
+      fiber: "5g",
+      sodium: "890mg",
+    },
+    tips: [
+      "Adjust spice level by using more or less curry paste",
+      "Add vegetables in stages based on cooking time needed",
+      "Fresh Thai basil is essential for authentic flavor",
+      "Use full-fat coconut milk for richest, creamiest sauce",
+    ],
+  },
+  {
+    rate: 4.8,
+    review: 234,
+    prepTime: "30 min",
+    cookTime: "60 min",
+    servings: "4 people",
+    difficulty: "Intermediate",
+    country: "Mediterranean",
+    title: "Greek Moussaka",
+    description: "Traditional layered eggplant casserole with lamb",
+    image: "./Assets/Photos/photo-15.avif",
+    ingredients: [
+      "3 large eggplants, sliced",
+      "500g ground lamb",
+      "400g canned tomatoes",
+      "1 onion, diced",
+      "3 cloves garlic, minced",
+      "500ml béchamel sauce",
+      "100g parmesan cheese",
+      "Cinnamon and oregano",
+      "Olive oil",
+    ],
+    instructions: [
+      "Slice eggplants, salt them, and let sit for 30 minutes. Rinse and pat dry.",
+      "Brush eggplant slices with olive oil, grill or bake until softened.",
+      "Cook ground lamb with onion and garlic. Add tomatoes, cinnamon, oregano. Simmer 20 minutes.",
+      "Preheat oven to 180°C (350°F).",
+      "Layer in baking dish: eggplant, meat sauce, eggplant, meat sauce. Top with béchamel and parmesan.",
+      "Bake for 45 minutes until golden. Let rest 15 minutes before serving.",
+    ],
+    nutriton: {
+      cal: "580 kcal",
+      prot: "36g",
+      carb: "32g",
+      fat: "32g",
+      fiber: "8g",
+      sodium: "820mg",
+    },
+    tips: [
+      "Salt eggplant to remove bitterness",
+      "Don't skip the resting time - it helps set the layers",
+      "Use ground beef if lamb is unavailable",
+      "Make ahead and reheat for easier serving",
+    ],
+  },
+];
 
-// function showMeal() {
-//   let mealNum = Math.floor(Math.random() * meals.length);
-//   currMeal = meals[mealNum];
-//   mealTitle.textContent = currMeal.title;
-//   mealDesc.textContent = currMeal.description;
-//   mealImg.src = currMeal.image;
-//   content.innerHTML = `<ol style="list-style-type: decimal">
-//     ${currMeal.ingredients.map((e) => `<li>${e}</li>`).join("")}
-//   </ol>`;
-// }
+function showMeal() {
+  const mealNum = Math.floor(Math.random() * meals.length);
+  currMeal = meals[mealNum];
 
-// btnIngred.addEventListener("click", function () {
-//   content.innerHTML = `<ol style="list-style-type: decimal">
-//     ${currMeal.ingredients.map((e) => `<li>${e}</li>`).join("")}
-//   </ol>`;
-// });
+  const mealContainer = document.querySelector(".meals");
+  mealContainer.innerHTML = `
+  <div class="meal rounded">
+  <div class="img-meal position-relative">
+  <img src="${currMeal.image}" alt="The Photo of Meal." id="mealImg">
+  <div class="position-absolute rate">
+  <p style="font-weight: bold;">${currMeal.rate} <span style="font-weight: normal;">(${currMeal.review} reviews)</span></p>
+  </div>
+  <div class="fast-details d-flex justify-around align-center rounded position-absolute">
+  <div class="d-flex flex-column justify-center align-center gap-5">
+  <i class="fa-solid fa-clock" style="color: #FF6900;"></i>
+  <p>Prep Time</p>
+  <span>${currMeal.prepTime}</span>
+  </div>
+  <div class="d-flex flex-column justify-center align-center gap-5">
+  <i class="fa-solid fa-fire-burner" style="color: #FB2C36;"></i>
+  <p>Cook Time</p>
+  <span>${currMeal.cookTime}</span>
+  </div>
+  <div class="d-flex flex-column justify-center align-center gap-5">
+  <i class="fa-solid fa-users" style="color:#2B7FFF;"></i>
+  <p>Servings</p>
+  <span>${currMeal.servings}</span>
+  </div>
+  </div>
+  </div>
+  <div class="description container">
+  <div class="origin">
+  <span class="difficulty">${currMeal.difficulty}</span>
+  <span class="country">${currMeal.country}</span>
+  </div>
+  <div class="d-flex justify-between flex-wrap align-center">
+  <div class="meal-details">
+  <h1 id="mealTitle">${currMeal.title}</h1>
+  <p id="mealDesc" class="meal-desc" style="margin-bottom: 10px;">${currMeal.description}
+  </p>
+  </div>
+  <div class="meal-icon d-flex align-center justify-center">
+  <i class="fa-solid fa-bookmark save"></i>
+  <i class="fa-solid fa-share-nodes share"></i>
+  </div>
+  </div>
+  <div id="details" class="details d-flex flex-column align-start">
+  <button id="ingred-btn">Ingredients</button>
+  <button id="instr-btn">Instructions</button>
+  <button id="nutr-btn">Nutrition</button>
+  <button id="tips-btn">Chef's Tips</button>
+  </div>
+  <div class="gray-line"></div>
+  <div id="content">
+  <ul class="ingredients rounded dynamic-counter" id="ingred-list">
+  ${currMeal.ingredients.map((i) => `<li>${i}</li>`).join("")}
+  </ul>
+  </div>
+  <div class="gray-line"></div>
+  <button id="try-another" class="rounded">Try Another Recipe</button>
+  </div>
+  </div>
+  `;
 
-// btnInstr.addEventListener("click", function () {
-//   content.innerHTML = `<ol style="list-style-type: decimal">
-//     ${currMeal.instructions.map((item) => `<li>${item}</li>`).join("")}
-//   </ol>`;
-// });
+  btnTry = document.getElementById("try-another");
+  btnIngred = document.getElementById("ingred-btn");
+  btnInstr = document.getElementById("instr-btn");
+  btnNutr = document.getElementById("nutr-btn");
+  btnTips = document.getElementById("tips-btn");
+  content = document.getElementById("content");
 
-// btnTips.addEventListener("click", function () {
-//   content.innerHTML = `<ul style="list-style-type: none">
-//     ${currMeal.tips.map((item) => `<li>${item}</li>`).join("")}
-//   </ul>`;
-// });
+  btnIngred.addEventListener("click", function () {
+    content.innerHTML = `<ul class="ingredients rounded dynamic-counter" id="ingred-list">
+    ${currMeal.ingredients.map((i) => `<li>${i}</li>`).join("")}
+    </ul>`;
+  });
 
-// btnTry.addEventListener("click", showMeal);
+  btnInstr.addEventListener("click", function () {
+    content.innerHTML = `<ul class="instructions dynamic-counter">
+    ${currMeal.instructions.map((i) => `<li>${i}</li>`).join("")}
+    </ul>`;
+  });
 
-// showMeal();
+  btnNutr.addEventListener("click", function () {
+    content.innerHTML = `
+    <div class="nutrition d-grid">
+                            <div class="d-flex align-center justify-between">
+                                <span class="calories icon">Calories</span>
+                                <span class="calories-val val">${currMeal.nutriton.cal}</span>
+                            </div>
+                            <div class="d-flex align-center justify-between">
+                                <span class="protien icon">Protein</span>
+                                <span class="portien-val val">${currMeal.nutriton.prot}</span>
+                            </div>
+                            <div class="d-flex align-center justify-between">
+                                <span class="carb icon">Carbohydrates</span>
+                                <span class="carb-val val">${currMeal.nutriton.carb}</span>
+                            </div>
+                            <div class="d-flex align-center justify-between">
+                                <span class="fat icon">Fat</span>
+                                <span class="fat-val val">${currMeal.nutriton.fat}</span>
+                            </div>
+                            <div class="d-flex align-center justify-between">
+                                <span class="fiber icon">Fiber</span>
+                                <span class="fiber-val val">${currMeal.nutriton.fiber}</span>
+                            </div>
+                            <div class="d-flex align-center justify-between">
+                                <span class="sodium icon">Sodium</span>
+                                <span class="sodium-val val">${currMeal.nutriton.sodium}</span>
+                            </div>
+                        </div>
+    `;
+  });
+
+  btnTips.addEventListener("click", function () {
+    content.innerHTML = `
+    <ul class="chef-tips">
+    ${currMeal.tips.map((i) => `<li>${i}</li>`).join("")}
+    </ul>
+    `;
+  });
+
+  btnTry.addEventListener("click", showMeal);
+}
+
+showMeal();

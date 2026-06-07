@@ -288,11 +288,11 @@
 
 /* just for test */
 
-.chef-tips,
+/* .chef-tips,
 .ingredients,
 .nutrition {
     display: none;
-}
+} */
 
 
 /* Media Queries if needed */
@@ -312,11 +312,11 @@
     }
 
     /* just for test */
-    .nutrition,
+    /* .nutrition,
     .chef-tips,
     .ingredients {
         display: none;
-    }
+    } */
 
     #try-another {
         font-size: 18px;
@@ -328,10 +328,10 @@
 @media (min-width: 992px) {
     .meal {
         display: grid;
-        grid-template-columns: 35% 65%;
+        grid-template-columns: 43% 57%;
         height: 800px;
         overflow: auto;
-        width: 90%;
+        width: 75%;
         margin: auto;
     }
 

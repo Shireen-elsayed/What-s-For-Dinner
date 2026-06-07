@@ -128,7 +128,7 @@ nav {
 @media (min-width: 576px) {
     .nav-text {
         h1 {
-            font-size: clamp(1.3rem, 3vw, 2.5rem);
+            font-size: clamp(1.3rem, 2.3vw, 2rem);
         }
 
         p {
@@ -147,7 +147,12 @@ nav {
     }
 }
 
-@media (min-width: 992px) {}
+@media (min-width: 992px) {
+    .content{
+        width:75%;
+        margin:auto;
+    }
+}
 
 @media (min-width: 1200px) {}
 
