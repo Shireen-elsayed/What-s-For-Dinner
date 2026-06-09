@@ -9,6 +9,27 @@
     box-shadow: 0px 5px 3px rgba(0, 0, 0, 0.2);
 }
 
+.warning {
+    display: none;
+    background-color: #FEF2F2;
+    border-left: 5px solid #FB313B;
+    padding: 20px;
+    color: #9F0712;
+    margin-block: 20px 30px;
+}
+
+.warning p {
+    margin-top:5px;
+    color: #EB000B;
+    font-size: 13px;
+}
+
+.warning i {
+    margin-right: 10px;
+    color: #FB2C36;
+    font-size: 25px;
+}
+
 #mealImg {
     display: block;
     border-radius: 15px 15px 0 0;
@@ -130,11 +151,8 @@
     font-size: 17px;
 }
 
-.details button::before {
-    font-weight: 900;
-    font-family: "Font Awesome 7 Free";
-    margin-right: 10px;
-    color: #6A7282;
+.details button i {
+    margin-right: 5px;
 }
 
 .details button:hover {
@@ -142,21 +160,6 @@
     color: #000;
 }
 
-#ingred-btn::before {
-    content: "\f0ae"
-}
-
-#instr-btn::before {
-    content: "\f518";
-}
-
-#nutr-btn::before {
-    content: "\f200";
-}
-
-#tips-btn::before {
-    content: "\f0eb";
-}
 
 .ingredients {
     background-color: #FFF8EC;
@@ -312,7 +315,7 @@
     .meal {
         display: grid;
         grid-template-columns: 43% 57%;
-        gap:30px;
+        gap: 30px;
         height: 800px;
         overflow: auto;
         width: 75%;

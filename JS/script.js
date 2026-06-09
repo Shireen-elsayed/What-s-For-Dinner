@@ -20,8 +20,8 @@ const meals = [
   {
     rate: 4.5,
     review: 189,
-    prepTime: "10 min",
-    cookTime: "5 min",
+    prepTime: 10,
+    cookTime: 5,
     servings: "2 people",
     difficulty: "Easy",
     country: "American",
@@ -47,7 +47,7 @@ const meals = [
       "Assemble burgers with lettuce, tomato, onion, pickles, and your favorite sauce.",
     ],
     nutriton: {
-      cal: "650 kcal",
+      cal: -"650 kcal",
       prot: "38g",
       carb: "42g",
       fat: "35g",
@@ -64,8 +64,8 @@ const meals = [
   {
     rate: 4.7,
     review: 312,
-    prepTime: "15 min",
-    cookTime: "25 min",
+    prepTime: 15,
+    cookTime: 25,
     servings: "4 people",
     difficulty: "Intermediate",
     country: "Asian",
@@ -110,8 +110,8 @@ const meals = [
   {
     rate: 4.7,
     review: 412,
-    prepTime: "15 min",
-    cookTime: "20 min",
+    prepTime: 15,
+    cookTime: 20,
     servings: "4 people",
     difficulty: "Easy",
     country: "American",
@@ -156,8 +156,8 @@ const meals = [
   {
     rate: 4.8,
     review: 234,
-    prepTime: "30 min",
-    cookTime: "60 min",
+    prepTime: 30,
+    cookTime: 60,
     servings: "4 people",
     difficulty: "Intermediate",
     country: "Mediterranean",
@@ -216,12 +216,12 @@ function showMeal() {
   <div class="d-flex flex-column justify-center align-center gap-5">
   <i class="fa-solid fa-clock" style="color: #FF6900;"></i>
   <p>Prep Time</p>
-  <span>${currMeal.prepTime}</span>
+  <span>${currMeal.prepTime} min</span>
   </div>
   <div class="d-flex flex-column justify-center align-center gap-5">
   <i class="fa-solid fa-fire-burner" style="color: #FB2C36;"></i>
   <p>Cook Time</p>
-  <span>${currMeal.cookTime}</span>
+  <span>${currMeal.cookTime} min</span>
   </div>
   <div class="d-flex flex-column justify-center align-center gap-5">
   <i class="fa-solid fa-users" style="color:#2B7FFF;"></i>
@@ -246,12 +246,33 @@ function showMeal() {
   <i class="fa-solid fa-share-nodes share"></i>
   </div>
   </div>
-  <div id="details" class="details d-flex flex-column align-start">
-  <button id="ingred-btn">Ingredients</button>
-  <button id="instr-btn">Instructions</button>
-  <button id="nutr-btn">Nutrition</button>
-  <button id="tips-btn">Chef's Tips</button>
-  </div>
+  <div class="warning rounded d-flex align-center justify-start">
+            <div>
+                <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+            <div>
+                Extended Preparation Time
+                <p>This recipe requires more than 45 minutes to prepare. Plan accordingly!</p>
+            </div>
+        </div>
+  <div id="details" class="details d-flex flex-column align-start justify-center">
+                <button id="ingred-btn">
+                    <span><i class="fa-solid fa-list-check"></i></span>
+                    <span>Ingredients</span>
+                </button>
+                <button id="instr-btn">
+                    <span><i class="fa-solid fa-book-open"></i></span>
+                    <span>Instructions</span>
+                </button>
+                <button id="nutr-btn">
+                    <span><i class="fa-solid fa-chart-pie"></i></span>
+                    <span>Nutrition</span>
+                </button>
+                <button id="tips-btn">
+                    <span><i class="fa-solid fa-lightbulb"></i></span>
+                    <span>Chef's Tips</span>
+                </button>
+            </div>
   <div class="gray-line"></div>
   <div id="content">
   <ul class="ingredients rounded dynamic-counter" id="ingred-list">
@@ -270,6 +291,11 @@ function showMeal() {
   btnNutr = document.getElementById("nutr-btn");
   btnTips = document.getElementById("tips-btn");
   content = document.getElementById("content");
+  warning = document.querySelector(".warning");
+
+  if (currMeal.prepTime + currMeal.cookTime > 45) {
+    warning.style.display = "flex";
+  }
 
   btnIngred.addEventListener("click", function () {
     content.innerHTML = `<ul class="ingredients rounded dynamic-counter" id="ingred-list">
