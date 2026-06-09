@@ -19,7 +19,7 @@
 }
 
 .warning p {
-    margin-top:5px;
+    margin-top: 5px;
     color: #EB000B;
     font-size: 13px;
 }
@@ -160,6 +160,26 @@
     color: #000;
 }
 
+.details button.selected{
+    color:var(--orange);
+}
+.details .btn{
+    position:relative;
+}
+
+.details button .underLine{
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width:0%;
+    background-color:var(--orange);
+    height: 1px;
+    transform: all 0.3s ease ;
+}
+
+.details button.selected .underLine{
+    width:100%;
+}
 
 .ingredients {
     background-color: #FFF8EC;
@@ -318,8 +338,10 @@
         gap: 30px;
         height: 800px;
         overflow: auto;
-        width: 75%;
+        width: calc(75% - 10px);
         margin: auto;
+        border-radius: 15px;
+        overflow-x: hidden;
     }
 
     /* width */
@@ -348,7 +370,7 @@
     }
 
     .description {
-        margin-right: 50px;
+        margin-right: 70px;
     }
 
     #details {

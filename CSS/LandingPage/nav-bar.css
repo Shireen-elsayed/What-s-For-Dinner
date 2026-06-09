@@ -138,7 +138,7 @@ nav {
 }
 
 @media (min-width: 768px) {
-    .bars {
+    .bars, .bars-phone.active {
         display: none;
     }
 

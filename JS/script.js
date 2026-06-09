@@ -4,6 +4,11 @@ let barsPhone = document.querySelector(".bars-phone");
 
 barsIcon.addEventListener("click", function () {
   barsPhone.classList.toggle("active");
+  if (barsPhone.classList.contains("active")) {
+    barsIcon.innerHTML = `<i class="fa-regular fa-circle-xmark"></i>`;
+  } else {
+    barsIcon.innerHTML = `<i class="fa-solid fa-bars"></i>`;
+  }
 });
 
 //______Meals______
@@ -14,6 +19,7 @@ let btnInstr = null;
 let btnNutr = null;
 let btnTips = null;
 let content = null;
+let theButton=null;
 let currMeal;
 
 const meals = [
@@ -200,6 +206,7 @@ const meals = [
   },
 ];
 
+
 function showMeal() {
   const mealNum = Math.floor(Math.random() * meals.length);
   currMeal = meals[mealNum];
@@ -247,35 +254,39 @@ function showMeal() {
   </div>
   </div>
   <div class="warning rounded d-flex align-center justify-start">
-            <div>
-                <i class="fa-solid fa-triangle-exclamation"></i>
-            </div>
-            <div>
-                Extended Preparation Time
-                <p>This recipe requires more than 45 minutes to prepare. Plan accordingly!</p>
-            </div>
-        </div>
+  <div>
+  <i class="fa-solid fa-triangle-exclamation"></i>
+  </div>
+  <div>
+  Extended Preparation Time
+  <p>This recipe requires more than 45 minutes to prepare. Plan accordingly!</p>
+  </div>
+  </div>
   <div id="details" class="details d-flex flex-column align-start justify-center">
-                <button id="ingred-btn">
+                <button id="ingred-btn" class="ingred-btn btn selected">
                     <span><i class="fa-solid fa-list-check"></i></span>
                     <span>Ingredients</span>
-                </button>
-                <button id="instr-btn">
+                    <span class="underLine"></span>
+                    </button>
+                    <button id="instr-btn" class="btn">
                     <span><i class="fa-solid fa-book-open"></i></span>
                     <span>Instructions</span>
-                </button>
-                <button id="nutr-btn">
+                    <span class="underLine"></span>
+                    </button>
+                    <button id="nutr-btn" class="btn">
                     <span><i class="fa-solid fa-chart-pie"></i></span>
                     <span>Nutrition</span>
-                </button>
-                <button id="tips-btn">
+                    <span class="underLine"></span>
+                    </button>
+                    <button id="tips-btn" class="btn">
                     <span><i class="fa-solid fa-lightbulb"></i></span>
                     <span>Chef's Tips</span>
-                </button>
-            </div>
-  <div class="gray-line"></div>
-  <div id="content">
-  <ul class="ingredients rounded dynamic-counter" id="ingred-list">
+                    <span class="underLine"></span>
+                    </button>
+                    </div>
+                    <div class="gray-line"></div>
+                    <div id="content">
+                    <ul class="ingredients rounded dynamic-counter" id="ingred-list">
   ${currMeal.ingredients.map((i) => `<li>${i}</li>`).join("")}
   </ul>
   </div>
@@ -284,7 +295,7 @@ function showMeal() {
   </div>
   </div>
   `;
-
+  
   btnTry = document.getElementById("try-another");
   btnIngred = document.getElementById("ingred-btn");
   btnInstr = document.getElementById("instr-btn");
@@ -292,21 +303,25 @@ function showMeal() {
   btnTips = document.getElementById("tips-btn");
   content = document.getElementById("content");
   warning = document.querySelector(".warning");
+  const btns = [btnIngred, btnInstr, btnNutr, btnTips];
+  theButton = document.querySelector(".btn");
 
   if (currMeal.prepTime + currMeal.cookTime > 45) {
     warning.style.display = "flex";
   }
-
+  
   btnIngred.addEventListener("click", function () {
     content.innerHTML = `<ul class="ingredients rounded dynamic-counter" id="ingred-list">
     ${currMeal.ingredients.map((i) => `<li>${i}</li>`).join("")}
     </ul>`;
+    activeBtn(btnIngred);
   });
 
   btnInstr.addEventListener("click", function () {
     content.innerHTML = `<ul class="instructions dynamic-counter">
     ${currMeal.instructions.map((i) => `<li>${i}</li>`).join("")}
     </ul>`;
+    activeBtn(btnInstr);
   });
 
   btnNutr.addEventListener("click", function () {
@@ -338,7 +353,16 @@ function showMeal() {
                             </div>
                         </div>
     `;
+    activeBtn(btnNutr);
+
   });
+
+  function activeBtn(btn) {
+    btns.forEach(function (button) {
+      button.classList.remove("selected");
+    });
+    btn.classList.add("selected");
+  }
 
   btnTips.addEventListener("click", function () {
     content.innerHTML = `
@@ -346,6 +370,8 @@ function showMeal() {
     ${currMeal.tips.map((i) => `<li>${i}</li>`).join("")}
     </ul>
     `;
+    activeBtn(btnTips);
+
   });
 
   btnTry.addEventListener("click", showMeal);
