@@ -1,12 +1,9 @@
 nav {
     background-color: #FFFFFF;
     border: 2px solid #EBE8D9;
-    padding-block: 50px 10px;
+    padding-block: 30px;
 }
 
-.nav-desc1 {
-    margin-bottom: 30px;
-}
 
 .nav-logo-text {
     gap: 10px;
@@ -26,8 +23,9 @@ nav {
     background-color: var(--orange);
     font-size: 30px;
     padding: 5px;
+    width:50px;
+    height: 50px;
 }
-
 
 .bars {
     border-color: transparent;
@@ -112,13 +110,13 @@ nav {
 .link-icons {
     display: none;
     gap: 20px;
-    font-size: 30px;
+    font-size: 20px;
     color: #595C5F;
 }
 
 .link-icons img {
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     border: 3px solid #FFB86A;
 }

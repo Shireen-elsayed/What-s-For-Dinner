@@ -1,5 +1,7 @@
-.meals {
+main{
     background-color: #FFF9EC;
+}
+.meals {
     padding: 30px 0 50px;
 }
 
@@ -335,7 +337,7 @@
     .meal {
         display: grid;
         grid-template-columns: 43% 57%;
-        gap: 30px;
+        gap: 15px;
         height: 800px;
         overflow: auto;
         width: calc(75% - 10px);
@@ -370,7 +372,7 @@
     }
 
     .description {
-        margin-right: 70px;
+        margin-right: 50px;
     }
 
     #details {

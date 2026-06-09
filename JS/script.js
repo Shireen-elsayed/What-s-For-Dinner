@@ -213,7 +213,7 @@ function showMeal() {
 
   const mealContainer = document.querySelector(".meals");
   mealContainer.innerHTML = `
-  <div class="meal rounded">
+  <div class="meal rounded container">
   <div class="img-meal position-relative">
   <img src="${currMeal.image}" alt="The Photo of Meal." id="mealImg">
   <div class="position-absolute rate">
